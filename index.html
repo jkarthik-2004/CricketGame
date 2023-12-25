@@ -5,43 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cricket Game</title>
-    <style>
-        
-        
-    </style>
     <link rel="stylesheet" href="cricket.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
 </head>
 
 <body>
     
+    <header>
+        <div class="head-container">
+            <img class="bowler-img" src="images/bowler.png" alt="">
+            <h1>Bat Ball Stump Game</h1>
+            <img class="batsmen-img" src="images/batsmen.png" alt="">
+        </div>
+    </header>
     
     
-    <h1>Bat Ball Stump Game</h1>
-    <button class="choice-btn" onclick="
+    <div class="container">
+        
+        <div id="bat-btn">        
+        <button class="choice-btn" onclick="
     let computerChoice = generateComputerChoice();
     let resultMsg = getResult('Bat', computerChoice);
     showResult('Bat', computerChoice, resultMsg)
-   "><img src="bat.png" alt="Bat Image" class="choice-img"></button>
-
+   "><img src="images/bat.png" alt="Bat Image" class="choice-img"></button>
+   <h3>Bat</h3>
+   </div>
+   <div id="ball-btn">
     <button class="choice-btn" onclick="
     computerChoice = generateComputerChoice();
     resultMsg = getResult('Ball', computerChoice);
     showResult('Ball', computerChoice, resultMsg)
-    "> <img src="ball.png" alt="Ball Image" class="choice-img"></button>
-
+    "> <img src="images/ball.png" alt="Ball Image" class="choice-img"></button>
+    <h3>Ball</h3>
+</div>
+<div id="stump-btn">
     <button class="choice-btn" onclick="
     computerChoice = generateComputerChoice();
     resultMsg = getResult('Stump', computerChoice);
     showResult('Stump', computerChoice, resultMsg)
-    "><img src="stump.png" alt="stump Image" class="choice-img"></button>
-
-    
-
+    "><img src="images/stump.png" alt="stump Image" class="choice-img"></button>
+    <h3>Stump</h3>
+    </div>
+</div>
+<div class="container2">
+    <div class="js-container">
     <h3 id="user-move"></h3>
     <h3 id="computer-move"></h3>
     <h3 id="result"></h3>
     <h3 id="score"></h3>
-    <button onclick="localStorage.clear(); resetScore()">Reset </button>
+</div>
+    <button class="reset-btn" onclick="localStorage.clear(); resetScore()">Reset </button>
+</div>
     <script>
         let scorestr = localStorage.getItem('score')
         let score;
